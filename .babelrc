@@ -1,0 +1,21 @@
+{
+  "env": {
+    "development": {
+      "presets": ["es2015"],
+      "plugins": [
+        ["transform-runtime"],
+        ["module-resolver", {
+          "root": ["./assets/js"],
+          "alias": {
+            "@": "./assets/js"
+          }
+        }]
+      ]
+    },
+    "test": {
+      "presets": [
+        ["env", { "targets": { "node": "current" }}]
+      ]
+    }
+  }
+}

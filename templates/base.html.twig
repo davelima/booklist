@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="{{ asset('build/js/app.js') }}"></script>
+        <link href="{{ asset('build/css/app.css') }}" rel="stylesheet">
+        <meta charset="UTF-8">
+        <title>{% block title %}Book list{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
