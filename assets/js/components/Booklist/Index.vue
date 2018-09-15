@@ -18,7 +18,13 @@
                     <div class="modal-body">
                         <form>
                             <label for="bookSearch">Search book</label>
-                            <input id="bookSearch" type="search" placeholder="Enter book title or ISBN" class="form-control" required>
+                            <autocomplete
+                                    source="/books/search/?q="
+                                    results-property="books"
+                                    :results-display="formattedDisplay"
+                                    results-value="title"
+                            >
+                            </autocomplete>
                         </form>
                     </div>
                     <div class="modal-footer">

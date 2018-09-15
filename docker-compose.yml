@@ -1,0 +1,13 @@
+booklist-mariadb:
+  image: mariadb
+  container_name: booklist-mariadb
+  ports:
+    - "3306:3306"
+  volumes:
+    - ./.mysqldata:/var/lib/mysql
+  environment:
+    - MYSQL_ALLOW_EMPTY_PASSWORD=true
+    - MYSQL_DATABASE=booklist
+    - MYSQL_USER=booklist
+    - MYSQL_PASSWORD=booklist
+    - TZ=America/Sao_Paulo

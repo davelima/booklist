@@ -1,3 +1,4 @@
+.mysqldata/
 
 ###> symfony/framework-bundle ###
 /.env

@@ -61,4 +61,10 @@ export default {
             })
         })
     },
+
+    formattedDisplay (result) {
+        var authors = result.authors.join(', ')
+
+        return `${result.title} (${authors})`
+    }
 }

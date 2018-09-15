@@ -6,6 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use App\Service\Google\Books as GoogleBooks;
 
 class DefaultController extends Controller
 {
@@ -84,5 +85,18 @@ class DefaultController extends Controller
         ];
 
         return $this->json($mockResponse);
+    }
+
+    /**
+     * @Route("/books/search/", name="search-books")
+     * @Method({"GET"})
+     *
+     * @param GoogleBooks $books
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     */
+    public function searchBooks(GoogleBooks $books, Request $request)
+    {
+        return $this->json($books->search($request->get('q')));
     }
 }
